@@ -8,6 +8,8 @@
 /.bundle
 .history
 .DS_Store
+.ENV
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
