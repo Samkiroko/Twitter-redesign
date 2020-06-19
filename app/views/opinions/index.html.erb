@@ -1,0 +1,44 @@
+<% provide(:active_class_home, 'left-menu-active') %>
+
+<div class="homepage">
+  <%= render 'left_menu' %>
+  <div class="center-menu">
+    <%= render 'shared/header' %>
+    <div class="center-wrap">
+      <div class="tweet-center">
+        <div class="title-section">
+          <div class="tweets-text">Tweets</div>
+        </div>
+        <%= render 'opinions/new' %>
+        <ul class="tweet-list">
+          <% following_opinions.each do |opinion| %>
+            <li class="individual-tweet">
+              <div class="tweet-img-wrap">
+                <div class="tweet-img">
+                  <% if opinion.user.photo? %>
+                    <%= image_tag opinion.user.photo.url %>
+                  <% else %>
+                    <%= avatar_for(opinion.user, options = { size: 50 }) %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="tweet-name-text">
+                <div class="tweet-fullname">
+                  <%= link_to opinion.user.full_name, user_path(opinion.user.id) %>
+                </div>
+                <div class="tweet-username">
+                  @<%= opinion.user.username %>
+                </div>
+                <div class="tweet-created-at">
+                  | <%= time_ago_in_words(opinion.created_at) %> ago
+                </div>
+                <p><%= opinion.text %></p>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <%= render 'who_to_follow' %>
+    </div>
+  </div>
+</div>

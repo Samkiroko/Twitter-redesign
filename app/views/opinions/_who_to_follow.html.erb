@@ -1,0 +1,20 @@
+<aside>
+  <p class="who-to-follow">Who to follow</p>
+  <% not_following_users.each do |user| %>
+    <%= link_to user_path(user.id), class: 'user-follow-link' do %>
+      <div class="user-follow">
+        <div class="user-follow-img">
+          <% if user.photo? %>
+            <%= image_tag user.photo.url %>
+          <% else %>
+            <%= avatar_for(user, options = { size: 45 }) %>
+          <% end %>
+        </div>
+        <div class="user-follow-text">
+          <div class="user-follow-fullname"><%= user.full_name %></div>
+          <div class="user-follow-username">@<%= user.username %></div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</aside>
