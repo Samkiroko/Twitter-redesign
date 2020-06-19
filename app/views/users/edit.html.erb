@@ -1,0 +1,80 @@
+<% provide(:active_class_settings, ('left-menu-active' if @user == current_user)) %>
+
+<div class="homepage">
+  <%= render 'opinions/left_menu' %>
+  <div class="center-menu">
+    <%= render 'shared/header' %>
+    <div class="center-wrap">
+      <div class="tweet-center edit-page">
+        <div class="title-section">
+          <div class="tweets-text">Update</div>
+        </div>
+        <%= form_for @user, url: "/users/#{params[:id]}" do |f| %>
+          <%= f.label :full_name, class: 'form-label' %> <br>
+          <%= f.text_field :full_name, class: 'form-input' %> <br>
+      
+          <%= f.label :username, class: 'form-label' %> <br>
+          <%= f.text_field :username, class: 'form-input' %> <br>
+
+          <%= f.label :photo, class: 'form-label' %> <br>
+          <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png', class: 'user-photo' %> 
+
+          <%= f.label :cover_image, class: 'form-label' %> <br>
+          <%= f.file_field :cover_image, accept: 'image/jpeg,image/gif,image/png', class: 'user-photo' %> <br>
+      
+          <%= f.submit 'Update', class: 'form-btn' %>
+        <% end %>
+        <%= link_to 'Delete account', "/users/#{@user.id}", method: :delete, data: { confirm: "You sure?" }, class: 'delete-btn' %>
+      </div>
+      <aside class="profile-aside">
+        <div class="profile-img-link">
+          <div class="user-img">
+            <% if @user.photo? %>
+              <%= image_tag @user.photo.url %>
+            <% else %>
+              <%= avatar_for(@user, options = { size: 100 }) %>
+            <% end %>
+          </div>
+          <% unless current_user == @user %>
+            <% if following?(@user) %>
+              <%= link_to 'Unfollow', following_path(@user.id), method: :delete, class: 'follow-user' %>
+            <% else %>
+              <%= link_to 'Follow', followings_path(@user.id), method: :post, class: 'follow-user'%>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="user-fullname"><%= @user.full_name %></div>
+        <div class="user-username">@<%= @user.username %></div>
+        <div class="user-profile-stats">
+          <div>
+            <p class="stat-num"><%= @user.opinions.count %></p>
+            <p class="stat-text"><%= 'Tweet'.pluralize(@user.opinions.count) %></p>
+          </div>
+          <div class="stat-center">
+            <p class="stat-num"><%= @user.followings.count %></p>
+            <p class="stat-text">Following</p>
+          </div>
+          <div>
+            <p class="stat-num"><%= @user.followers.count %></p>
+            <p class="stat-text"><%= 'Follower'.pluralize(@user.followers.count) %></p class="stat-text">
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#user_photo').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+  $('#user_cover_image').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
