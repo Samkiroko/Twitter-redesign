@@ -1,0 +1,36 @@
+<aside class="left-menu">
+  <div class="user-img">
+    <% if current_user.photo? %>
+      <%= image_tag current_user.photo.url %>
+    <% else %>
+      <%= avatar_for(current_user, options = { size: 120 }) %>
+    <% end %>
+  </div>
+  <div class="user-fullname"><%= current_user.full_name %></div>
+  <div class="user-stats">
+    <div>
+      <p class="stat-num"><%= current_user.followings.count %></p>
+      <p>Following</p>
+    </div>
+    <div>
+      <p class="stat-num"><%= current_user.followers.count %></p>
+      <p><%= 'Follower'.pluralize(current_user.followers.count) %></p>
+    </div>
+  </div>
+  <%= link_to opinions_path, class: yield(:active_class_home) do %>
+    <i class="fa fa-home"></i>
+    <div class="profile-link">Home</div>
+  <% end %>
+  <%= link_to user_path(current_user.id), class: yield(:active_class_profile) do %>
+    <i class="fa fa-user"></i>
+    <div class="profile-link">Profile</div>
+  <% end %>
+  <%= link_to discover_path, class: yield(:active_class_discover) do %>
+    <i class="fa fa-hashtag"></i>
+    <div class="profile-link">Discover</div>
+  <% end %>
+  <%= link_to edit_user_path(current_user.id), class: yield(:active_class_settings) do %>
+    <i class="fa fa-cog"></i>
+    <div class="profile-link">Settings</div>
+  <% end %>
+</aside>

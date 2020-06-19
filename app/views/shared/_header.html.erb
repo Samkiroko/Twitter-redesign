@@ -1,0 +1,22 @@
+<header class="navbar">
+  <div class="container-fluid navbar-inner">
+    <nav class="twitter">
+      <%= link_to opinions_path, class: "logo" do %>
+        <i class="fa fa-twitter home-logo"></i>
+      <% end %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-cog"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Profile", user_path(current_user.id) %></li>
+            <li><%= link_to "Settings", edit_user_path(current_user.id) %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,7 @@
+ <div class="tweet-form-wrap">
+  <%= form_for @opinion, url: opinions_path do |f| %>
+    <%= f.text_field :text, class: 'form-input', placeholder: "What's happening?" %>
+
+    <%= f.submit 'Tweet', class: 'form-btn' %>
+  <% end %>
+</div>

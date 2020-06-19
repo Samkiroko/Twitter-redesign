@@ -43,7 +43,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :production do
-  # gem 'fog', '1.42'
+  gem 'fog', '~> 2.2'
 end
 
 group :development, :test do

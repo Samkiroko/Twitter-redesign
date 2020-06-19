@@ -1,0 +1,54 @@
+<div class="home-wrap">
+  <div class="left">
+    <div class="left-inner">
+      <div>
+        <i class="fa fa-search"></i>
+        Follow your interests.
+      </div>
+      <div>
+        <i class="fa fa-users"></i>
+        Hear what people are talking about.
+      </div>
+      <div>
+        <i class="fa fa-comment"></i>
+        Join the conversation.
+      </div>
+    </div>  
+  </div>
+  <div class="right right-signup">
+    <div class="form-wrap">
+      <h2>Sign Up</h2>
+      <%= form_for @user, url: signup_path do |f| %>
+        <%= f.label :full_name, class: 'form-label' %> <br>
+        <%= f.text_field :full_name, class: 'form-input' %> <br>
+    
+        <%= f.label :username, class: 'form-label' %> <br>
+        <%= f.text_field :username, class: 'form-input' %> <br>
+
+        <%= f.label :photo, class: 'form-label' %> <br>
+        <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %> <br>
+
+        <%= f.label :cover_image, class: 'form-label' %> <br>
+        <%= f.file_field :cover_image, accept: 'image/jpeg,image/gif,image/png' %> <br>
+    
+        <%= f.submit 'Sign up', class: 'form-btn' %>
+      <% end %>
+      <%= link_to 'Login', root_path, class: 'login-btn form-btn' %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#user_photo').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+  $('#user_cover_image').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>

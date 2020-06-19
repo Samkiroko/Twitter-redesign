@@ -1,0 +1,27 @@
+<div class="home-wrap">
+  <div class="left">
+    <div class="left-inner">
+      <div>
+        <i class="fa fa-search"></i>
+        Follow your interests.
+      </div>
+      <div>
+        <i class="fa fa-users"></i>
+        Hear what people are talking about.
+      </div>
+      <div>
+        <i class="fa fa-comment"></i>
+        Join the conversation.
+      </div>
+    </div>  
+  </div>
+  <div class="right">
+    <%= render 'sessions/new' %>
+    <div class="right-center">
+      <i class="fa fa-twitter"></i>
+      <div>See what's happening in the world right now</div>
+      <p>Join Twitter today</p>
+      <%= link_to 'Sign up', signup_path %>
+    </div>
+  </div>
+</div>
