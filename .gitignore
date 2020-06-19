@@ -9,7 +9,7 @@
 .history
 .DS_Store
 .ENV
-
+secrets.yml
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
