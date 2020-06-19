@@ -1,0 +1,8 @@
+<div class="login-form-wrap">
+  <%= form_for :session, url: login_path do |f| %>
+    <%= f.label :username, class: 'form-label' %> <br>
+    <%= f.text_field :username, class: 'form-input' %>
+
+    <%= f.submit 'Log in', class: 'form-btn' %>
+  <% end %>
+</div>
