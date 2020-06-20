@@ -43,7 +43,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :production do
-
 end
 
 group :development, :test do
@@ -70,7 +69,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-  gem 'carrierwave-aws', '~> 1.5.0'
-  gem 'aws-sdk-s3', '~> 1'
-  gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'aws-sdk-s3', '~> 1'
+gem 'carrierwave-aws', '~> 1.5.0'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
