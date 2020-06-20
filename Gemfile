@@ -43,7 +43,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :production do
-  gem 'fog', '~> 2.2'
+  gem 'carrierwave-aws', '~> 1.5.0'
+  gem 'aws-sdk-s3', '~> 1'
 end
 
 group :development, :test do
