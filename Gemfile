@@ -11,7 +11,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '3.4.1'
-gem 'carrierwave', '1.2.2'
+gem 'carrierwave', '~> 2.1'
 gem 'faker', '~> 2.10', '>= 2.10.1'
 gem 'font-awesome-rails'
 gem 'jquery-rails', '4.3.1'
@@ -70,4 +70,6 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'carrierwave-aws', '~> 1.5.0'
+gem 'aws-sdk-s3', '~> 1'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
