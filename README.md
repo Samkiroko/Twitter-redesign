@@ -32,6 +32,12 @@
 
  ## Profile page
  ![image](https://user-images.githubusercontent.com/43377799/85222239-44f29f80-b3c2-11ea-96a5-2444d6c501d5.png)
+
+## Avoid n+1 queries problem
+![image](https://user-images.githubusercontent.com/43377799/85222608-3bb70200-b3c5-11ea-8085-b1158ea148dd.png)
+
+
+
 ## Built With
 
 - Ruby (version 2.6.5)
