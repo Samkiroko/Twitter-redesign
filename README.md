@@ -23,7 +23,7 @@
 
 
  The Live Version - [Twitter Redesign](https://sam-twitter-capstone.herokuapp.com/)
-
+ The Live Presentation - [Twitter Redesign presentation](https://sam-twitter-capstone.herokuapp.com/)
  Design: [Twitter Redesign](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details), by [Gregoire Vella](https://www.behance.net/gregoirevella)
 
  ## Home page
