@@ -72,4 +72,6 @@ end
 gem 'aws-sdk-s3', '~> 1'
 gem 'carrierwave-aws', '~> 1.5.0'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'rubocop', require: false
+gem 'rubocop-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
