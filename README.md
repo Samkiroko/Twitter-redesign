@@ -63,7 +63,7 @@ $ cd Twitter-redesign
 ````
 Use the following command to start the rails server then visit: http://localhost:3000 to use the app
 ````
-$ bundle instal
+$ bundle install
 ````
 ````
 $ rails s
