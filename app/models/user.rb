@@ -14,10 +14,10 @@ class User < ApplicationRecord
   mount_uploader :cover_image, CoverImageUploader
 
   scope :not_following_opinions, lambda { |user|
-                                   includes(:opinions).where('id NOT IN (?)',
-                                                             (user.followings.map(&:followed_id) << user.id))
-                                     .limit(10).order(created_at: :desc)
-                                 }
+                                  includes(:opinions).where('id NOT IN (?)',
+                                                            (user.followings.map(&:followed_id) << user.id))
+                                    .limit(10).order(created_at: :desc)
+                                  }
   scope :not_following_users, lambda { |user|
                                 where('id NOT IN (?)',
                                       (user.followings.map(&:followed_id) << user.id)).limit(10)

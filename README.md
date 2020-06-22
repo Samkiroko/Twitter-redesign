@@ -34,7 +34,7 @@
  ![image](https://user-images.githubusercontent.com/43377799/85222239-44f29f80-b3c2-11ea-96a5-2444d6c501d5.png)
 
 ## Avoid n+1 queries problem
-![image](https://user-images.githubusercontent.com/43377799/85222608-3bb70200-b3c5-11ea-8085-b1158ea148dd.png)
+![image](https://user-images.githubusercontent.com/43377799/85312848-1529c180-b4c0-11ea-9129-2410fcb42591.png)
 
 
 
@@ -62,6 +62,9 @@ $ git clone git@github.com:Samkiroko/Twitter-redesign.git
 $ cd Twitter-redesign
 ````
 Use the following command to start the rails server then visit: http://localhost:3000 to use the app
+````
+$ bundle instal
+````
 ````
 $ rails s
 ````
