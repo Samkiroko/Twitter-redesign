@@ -1,0 +1,38 @@
+<% provide(:active_class_discover, 'left-menu-active') %>
+
+<div class="homepage">
+  <%= render 'left_menu' %>
+  <div class="center-menu">
+    <%= render 'shared/header' %>
+    <div class="center-wrap">
+      <div class="tweet-center">
+        <div class="title-section">
+          <div class="tweets-text">Discover</div>
+        </div>
+        <div class="discover-tweet-list">
+          <% @not_followed.each do |user| %>
+            <% user.opinions.each do |opinion| %>
+              <div class="discover-tweet">
+                <%= link_to user_path(user.id), class: 'discover-user-link' do %>
+                  <div class="discover-tweet-top">
+                    <div class="photo">
+                      <% if user.photo? %>
+                        <%= image_tag user.photo.url %>
+                      <% else %>
+                        <%= avatar_for(user, options = { size: 45 }) %>
+                      <% end %>
+                    </div>
+                    <div class="name"><%= user.full_name %> </div> 
+                    <div class="time"> | <%= time_ago_in_words(opinion.created_at) %></div>
+                  </div>
+                <% end %>
+                <div><%= opinion.text %></div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <%= render 'who_to_follow' %>
+    </div>
+  </div>
+</div>

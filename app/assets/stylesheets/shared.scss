@@ -1,0 +1,67 @@
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap"; 
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flash {
+  margin-bottom: 0;
+}
+
+.homepage {
+  display: flex;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: rgba(29,161,242,1.00);
+  color: white;
+  border-radius: 0;
+  height: 80px;
+  margin: 0;
+  .navbar-inner {
+    height: 100%;
+    .twitter {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.nav > li > a.dropdown-toggle {
+  padding: 30px 15px 17px;
+}
+
+.nav > li > a.dropdown-toggle:hover,
+.nav > li > a.dropdown-toggle:focus {
+  background-color: transparent;
+  i {
+    color: white;
+  }
+}
+
+.nav .open > a.dropdown-toggle {
+  background-color: transparent;
+  i {
+    color: white;
+  }
+}
+
+.dropdown-toggle {
+  i {
+    font-size: 30px;
+    color: rgb(216, 216, 216);
+  }
+}
+
+.home-logo {
+  font-size: 40px;
+  color: white;
+}
